@@ -1,0 +1,83 @@
+/* Container spacing */
+:host {
+  display: block;
+  padding: 10px 5px;
+}
+
+/* Title */
+h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Full width inputs */
+mat-form-field {
+  width: 100%;
+}
+
+/* ⭐ Star rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating mat-icon {
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+  transition: 0.2s ease;
+}
+
+/* Active (selected stars) */
+.rating mat-icon.active {
+  color: gold;
+}
+
+/* Hover effect */
+.rating mat-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Actions (buttons) */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Primary button look */
+button[mat-raised-button] {
+  border-radius: 8px;
+}
+
+/* ------------------- */
+/* 📱 MOBILE OPTIMIZATION */
+/* ------------------- */
+@media (max-width: 600px) {
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .rating mat-icon {
+    font-size: 26px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

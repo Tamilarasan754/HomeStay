@@ -1,0 +1,24 @@
+<div class="reviews-grid">
+  @for (r of reviews; track r.name) {
+    <div class="review-card">
+
+      <h3>{{ r.name }}</h3>
+
+      @for (star of r.stars; track $index) {
+        <mat-icon>
+          {{ star ? 'star' : 'star_border' }}
+        </mat-icon>
+      }
+
+      <p>{{ r.message }}</p>
+
+    </div>
+  }
+</div>
+<div class="add-btn-container">
+  <button mat-raised-button color="primary" (click)="openDialog()">
+    Add Review
+  </button>
+</div>
+
+ 

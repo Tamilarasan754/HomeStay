@@ -1,0 +1,108 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; color: #1a1a1a; }/* NAVBAR */
+/* NAVBAR OVER HERO */
+.navbar {
+  position: fixed;              /* 🔥 KEY CHANGE */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;      /* 🔥 overlay look */
+  background-color: green;
+}
+
+/* CONTAINER */
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 30px;          /* 🔥 match original spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;                /* 🔥 important for hero bg */
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;                /* 🔥 important */
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+/* UNDERLINE EFFECT */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BUTTON */
+.btn-outline {
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+}
+
+.mobile-menu a {
+  padding: 10px 0;
+  color: black;
+}
+
+/* ACTIVE */
+.mobile-menu.open {
+  display: flex;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

@@ -1,0 +1,29 @@
+<h2>Add Review</h2>
+
+<form [formGroup]="form">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <div>
+    <mat-icon
+      *ngFor="let s of [1,2,3,4,5]; let i = index"
+      (click)="setRating(i+1)"
+      [style.color]="i < form.get('rating')?.value ? 'gold' : '#ccc'">
+      {{ i < form.get('rating')?.value ? 'star' : 'star_border' }}
+    </mat-icon>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Message</mat-label>
+    <textarea matInput formControlName="message"></textarea>
+  </mat-form-field>
+
+  <div>
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+  </div>
+
+</form>

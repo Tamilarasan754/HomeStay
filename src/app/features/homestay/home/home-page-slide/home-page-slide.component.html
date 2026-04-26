@@ -1,0 +1,29 @@
+<div class="main-container">
+  
+  <div class="window-viewport mat-elevation-z8"
+       (touchstart)="handleTouchStart($event)" 
+       (touchend)="handleTouchEnd($event)">
+       
+    <div class="ribbon-track" [style.transform]="transformStyle">
+      <div class="individual-slide" *ngFor="let slide of slides">
+        <img [src]="slide.img" class="slide-img">
+      </div>
+    </div>
+
+    <button mat-icon-button (click)="prev()" class="nav-btn prev">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    
+    <button mat-icon-button (click)="next()" class="nav-btn next">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+
+  <div class="indicator-bar">
+    <span *ngFor="let s of slides; let i = index" 
+          [class.active-dot]="i === currentIndex"
+          (click)="setSlide(i)">
+    </span>
+  </div>
+
+</div>

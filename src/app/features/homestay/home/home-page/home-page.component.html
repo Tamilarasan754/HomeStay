@@ -1,0 +1,172 @@
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-location">
+      <span>📍Valparai</span>
+    </div>
+
+    <h1>
+      Your Perfect Home <br>
+      <em>Away From Home</em>
+    </h1>
+
+    <p>
+      Experience the warmth of a curated homestay nestled in the heart of nature.
+      Authentic stays, unforgettable memories.
+    </p>
+<!-- <app-home-page-slide></app-home-page-slide> -->
+    <div class="hero-buttons">
+      <button class="btn-primary" (click)="scrollTo('booking')">
+        Book Your Stay
+      </button>
+      <button class="btn-outline-white" (click)="scrollTo('gallery')">
+        View Gallery
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-header">
+    <h2>Photo Gallery</h2>
+    <p>A glimpse into your home away from home</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <img src="assets/images/IMG1.jpg" alt="homestay">
+    </div>
+    <div class="gallery-item">
+    <img src="assets/images/IMG2.jpg" alt="homestay">
+  </div>
+
+  <div class="gallery-item">
+    <img src="assets/images/IMG3.jpg" alt="homestay">
+  </div>
+
+  <div class="gallery-item wide">
+    <img src="assets/images/IMG4.jpg" alt="homestay">
+  </div>
+
+  <!-- <div class="gallery-item">
+    <img src="assets/images/IMG5.jpg" alt="homestay">
+  </div> -->
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities-section" id="amenities">
+  <div class="section-header">
+    <h2>Amenities</h2>
+    <p>Everything you need for a perfect stay</p>
+  </div>
+
+  <div class="amenities-grid">
+    @for (item of amenities; track item.title) {
+  <div class="amenity-card">
+    <div class="amenity-icon">{{ item.icon }}</div>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.desc }}</p>
+  </div>
+}
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-header">
+    <h2>Guest Reviews</h2>
+     <app-review></app-review>
+  </div>
+
+ 
+</section>
+
+  <!-- BOOKING FORM -->
+   <section  id="booking">
+  <div class="booking-form">
+  <h3>Book Your Stay</h3>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="submitForm()">
+
+    <div class="form-row">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Your Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile No</mat-label>
+        <input matInput formControlName="mobile">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Members</mat-label>
+        <input matInput type="number" formControlName="members">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Arrival Time</mat-label>
+        <input matInput type="time" formControlName="time">
+      </mat-form-field>
+
+    </div>
+
+    <div class="form-row">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Check-in</mat-label>
+        <input matInput type="date" formControlName="checkIn">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Check-out</mat-label>
+        <input matInput type="date" formControlName="checkOut">
+      </mat-form-field>
+
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Message</mat-label>
+      <textarea matInput formControlName="message"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="full-width" type="submit">
+      Submit
+    </button>
+
+  </form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span>VALPARAI ARTICLE</span>
+      <p>Curated homestays for travelers seeking authentic experiences.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a (click)="scrollTo('home')">Home</a>
+      <a (click)="scrollTo('gallery')">Gallery</a>
+      <a (click)="scrollTo('amenities')">Amenities</a>
+      <a (click)="scrollTo('reviews')">Reviews</a>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>{{ 'tamilvlp754@gmail.com' }}</p>
+      <p>+91 9442976527</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Valparai Article
+  </div>
+</footer>
