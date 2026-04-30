@@ -126,12 +126,12 @@ header {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 1px;
   color: rgba(255,255,255,0.75);
   margin-bottom: 20px;
 }
 .hero-content h1 {
-  font-size: clamp(36px, 7vw, 72px);
+  font-size: clamp(36px, 7vw, 20px);
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -258,74 +258,6 @@ header {
 .amenity-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #1a2e1a; }
 .amenity-card p { font-size: 14px; color: #666; line-height: 1.5; }
 
-/* ===== REVIEWS ===== */
-// .reviews-section {
-//   padding: 80px 24px;
-//   max-width: 1280px;
-//   margin: 0 auto;
-// }
-// .reviews-grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-//   gap: 24px;
-//   margin-bottom: 60px;
-// }
-// .review-card {
-//   background: #f8faf8;
-//   border-radius: 12px;
-//   padding: 28px 24px;
-//   border-left: 4px solid #2d4a3e;
-// }
-// .stars { color: #f5a623; font-size: 18px; margin-bottom: 12px; }
-// .review-card p { font-size: 15px; color: #444; line-height: 1.6; margin-bottom: 14px; }
-// .reviewer { font-size: 13px; font-weight: 600; color: #2d4a3e; }
-
-// /* ===== BOOKING FORM ===== */
-// .booking-form {
-//   background: #f8faf8;
-//   border-radius: 16px;
-//   padding: 40px;
-//   max-width: 720px;
-//   margin: 0 auto;
-// }
-// .booking-form h3 { font-size: 22px; font-weight: 700; color: #1a2e1a; margin-bottom: 24px; text-align: center; }
-// .form-row {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   gap: 16px;
-//   margin-bottom: 16px;
-// }
-// .booking-form input,
-// .booking-form textarea {
-//   width: 100%;
-//   padding: 10px 14px;
-//   border: 1px solid #d0ddd0;
-//   border-radius: 8px;
-//   font-size: 14px;
-//   font-family: inherit;
-//   outline: none;
-//   transition: border-color 0.2s;
-//   background: white;
-// }
-// .booking-form input:focus,
-// .booking-form textarea:focus { border-color: #2d4a3e; }
-// .booking-form textarea {
-//   height: 110px;
-//   resize: vertical;
-//   margin-bottom: 16px;
-//   display: block;
-// }
-// .booking-form .btn-primary {
-//   background: #2d4a3e;
-//   color: white;
-//   padding: 12px;
-//   font-size: 15px;
-//   border-radius: 8px;
-// }
-// .booking-form .btn-primary:hover { background: #3d6a5a; opacity: 1; }
-/* ===== MODERN BOOKING FORM ===== */
-
-/* ===== FINAL WORKING BOOKING FORM ===== */
 
 .booking-form {
   max-width: 850px;
