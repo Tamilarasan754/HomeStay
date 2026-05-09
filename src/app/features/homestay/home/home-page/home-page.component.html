@@ -6,16 +6,10 @@
     <div class="hero-location">
       <span>📍Valparai</span>
     </div>
-
-    <h1>
-      Your Perfect Home <br>
-      <em>Away From Home</em>
-    </h1>
-
-    <!-- <p>
-      Experience the warmth of a curated homestay nestled in the heart of nature.
-      Authentic stays, unforgettable memories.
-    </p> -->
+    <div class="header-container">
+  <h1>{{displayText }}<span class="cursor">|</span>
+  </h1>
+</div>
 <app-home-page-slide></app-home-page-slide>
     <div class="hero-buttons">
       <button class="btn-primary" (click)="scrollTo('booking')">
@@ -32,7 +26,7 @@
 <section class="gallery-section" id="gallery">
   <div class="section-header">
     <h2>Photo Gallery</h2>
-    <p>A glimpse into your home away from home</p>
+    <!-- <p>A glimpse into your home away from home</p> -->
   </div>
 
   <div class="gallery-grid">
@@ -50,10 +44,6 @@
   <div class="gallery-item wide">
     <img src="assets/images/IMG4.jpg" alt="homestay">
   </div>
-
-  <!-- <div class="gallery-item">
-    <img src="assets/images/IMG5.jpg" alt="homestay">
-  </div> -->
   </div>
 </section>
 
@@ -87,60 +77,7 @@
 
   <!-- BOOKING FORM -->
    <section  id="booking">
-  <div class="booking-form">
-  <h3>Book Your Stay</h3>
-
-  <form [formGroup]="bookingForm" (ngSubmit)="submitForm()">
-
-    <div class="form-row">
-
-      <mat-form-field appearance="outline">
-        <mat-label>Your Name</mat-label>
-        <input matInput formControlName="name">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Mobile No</mat-label>
-        <input matInput formControlName="mobile">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Members</mat-label>
-        <input matInput type="number" formControlName="members">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" >
-        <mat-label>Arrival Time</mat-label>
-        <input matInput type="time" formControlName="time">
-      </mat-form-field>
-
-    </div>
-
-    <div class="form-row">
-
-      <mat-form-field appearance="outline">
-        <mat-label>Check-in</mat-label>
-        <input matInput type="date" formControlName="checkIn">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Check-out</mat-label>
-        <input matInput type="date" formControlName="checkOut">
-      </mat-form-field>
-
-    </div>
-
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Message</mat-label>
-      <textarea matInput formControlName="message"></textarea>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" class="full-width" type="submit">
-      Submit
-    </button>
-
-  </form>
-</div>
+<app-booking-form></app-booking-form>
 </section>
 
 <!-- FOOTER -->

@@ -17,10 +17,10 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class HomePageSlideComponent {
   slides = [
-    { img: 'https://picsum.photos/id/10/1200/800' },
-    { img: 'https://picsum.photos/id/20/1200/800' },
-    { img: 'https://picsum.photos/id/30/1200/800' },
-    { img: 'https://picsum.photos/id/40/1200/800' }
+    { img: 'assets/images/IMG6.jpg' },
+    { img: 'assets/images/IMG7.jpg' },
+    { img: 'assets/images/IMG8.jpg' },
+    { img: 'assets/images/IMG6.jpg' }
   ];
 
   currentIndex = 0;

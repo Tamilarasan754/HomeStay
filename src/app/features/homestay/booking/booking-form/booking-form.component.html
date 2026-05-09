@@ -1,0 +1,87 @@
+<div class="booking-page">
+  <mat-card class="booking-card">
+    <mat-card-header class="header">
+      <mat-card-title>Book Your Stay</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="bookingForm" (ngSubmit)="submitForm()" class="booking-form">
+        
+        <!-- Row 1: Name and Mobile -->
+        <div class="form-row two-cols">
+          <mat-form-field appearance="outline">
+            <mat-label>Your Name</mat-label>
+            <input matInput formControlName="name" placeholder="John Doe">
+            <mat-error *ngIf="bookingForm.get('name')?.hasError('required')">Name is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Mobile No</mat-label>
+            <input matInput type="tel" formControlName="mobile" placeholder="+91 ...">
+            <mat-error *ngIf="bookingForm.get('mobile')?.hasError('required')">Mobile is required</mat-error>
+            <mat-error *ngIf="bookingForm.get('mobile')?.hasError('pattern')">Invalid mobile number</mat-error>
+          </mat-form-field>
+        </div>
+
+       <!-- Row 2: Dates and Rooms -->
+<div class="form-row three-cols">
+  
+  <!-- Check-in Datepicker -->
+  <mat-form-field appearance="outline">
+    <mat-label>Check-in</mat-label>
+    <input matInput [matDatepicker]="checkInPicker" formControlName="checkIn" placeholder="Choose a date">
+    <mat-datepicker-toggle matIconSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+    <mat-datepicker #checkInPicker></mat-datepicker>
+    <mat-error *ngIf="bookingForm.get('checkIn')?.hasError('required')">Check-in is required</mat-error>
+  </mat-form-field>
+
+  <!-- Check-out Datepicker -->
+  <mat-form-field appearance="outline">
+    <mat-label>Check-out</mat-label>
+    <input matInput [matDatepicker]="checkOutPicker" formControlName="checkOut" placeholder="Choose a date">
+    <mat-datepicker-toggle matIconSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+    <mat-datepicker #checkOutPicker></mat-datepicker>
+    <mat-error *ngIf="bookingForm.get('checkOut')?.hasError('required')">Check-out is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Rooms</mat-label>
+    <input matInput type="number" formControlName="rooms">
+    <mat-error *ngIf="bookingForm.get('rooms')?.hasError('min')">At least 1 room</mat-error>
+  </mat-form-field>
+</div>
+
+        <!-- Row 3: Guests and Type -->
+        <div class="form-row three-cols">
+          <mat-form-field appearance="outline">
+            <mat-label>Adults</mat-label>
+            <input matInput type="number" formControlName="adults">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Children</mat-label>
+            <input matInput type="number" formControlName="children">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Booking Type</mat-label>
+            <mat-select formControlName="bookingType">
+              <mat-option value="family">Family</mat-option>
+              <mat-option value="bachelor">Bachelor</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Message -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Message</mat-label>
+          <textarea matInput formControlName="message" rows="4"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="submit-btn" >
+          Sumit Booking
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
