@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SpinnerComponent } from "./shared/spinner/spinner.component";
+import { LoadingService } from './services/loading.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent ,RouterOutlet],
+  imports: [NavbarComponent, RouterOutlet, SpinnerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -25,4 +27,6 @@ export class AppComponent {
   scrollTo(sectionId: string) {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   }
+    loadingService = inject(LoadingService);
+
 }

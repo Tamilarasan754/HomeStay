@@ -1,0 +1,106 @@
+// .loader-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 9999;
+//   /* Modern Glassmorphism effect */
+//   background: rgba(255, 255, 255, 0.4);
+//   backdrop-filter: blur(8px);
+//   -webkit-backdrop-filter: blur(8px);
+// }
+
+// .spinner-container {
+//   text-align: center;
+//   font-family: 'Inter', sans-serif;
+//   color: #333;
+// }
+
+// .spinner {
+//   width: 80px;
+//   height: 80px;
+//   animation: rotate 2s linear infinite;
+// }
+
+// .ring {
+//   stroke: rgba(0, 0, 0, 0.05);
+// }
+
+// .ball {
+//   stroke: url(#gradient); /* Optional: See below for gradient setup */
+//   stroke: #2575fc; /* Solid modern blue fallback */
+//   stroke-linecap: round;
+//   stroke-dasharray: 90, 150;
+//   stroke-dashoffset: 0;
+//   animation: dash 1.5s ease-in-out infinite;
+// }
+
+// @keyframes rotate {
+//   100% { transform: rotate(360deg); }
+// }
+
+// @keyframes dash {
+//   0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+//   50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+//   100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+// }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
+}
+
+.spinner-container {
+  text-align: center;
+  color: white;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  animation: rotate 1s linear infinite;
+}
+
+.path {
+  stroke: url(#gradient);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}

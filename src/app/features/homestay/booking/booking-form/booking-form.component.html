@@ -11,7 +11,7 @@
         <div class="form-row two-cols">
           <mat-form-field appearance="outline">
             <mat-label>Your Name</mat-label>
-            <input matInput formControlName="name" placeholder="John Doe">
+            <input matInput formControlName="name" placeholder="">
             <mat-error *ngIf="bookingForm.get('name')?.hasError('required')">Name is required</mat-error>
           </mat-form-field>
 

@@ -1,0 +1,51 @@
+<!-- @if (loadingService.loading$ | async) {
+  <div class="overlay">
+    <div class="spinner-container">
+      <svg viewBox="0 0 50 50" class="spinner">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6a11cb" />
+            <stop offset="100%" stop-color="#2575fc" />
+          </linearGradient>
+        </defs>
+        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+      </svg>
+      <p>Processing...</p>
+    </div>
+  </div>
+} -->
+  <div *ngIf="loadingService.loading$ | async" class="overlay">
+
+  <div class="spinner-container">
+
+    <svg viewBox="0 0 50 50" class="spinner">
+
+      <defs>
+        <linearGradient id="gradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%">
+
+          <stop offset="0%" stop-color="#6a11cb"></stop>
+          <stop offset="100%" stop-color="#2575fc"></stop>
+
+        </linearGradient>
+      </defs>
+
+      <circle
+        class="path"
+        cx="25"
+        cy="25"
+        r="20"
+        fill="none"
+        stroke-width="5">
+      </circle>
+
+    </svg>
+
+    <p>Processing...</p>
+
+  </div>
+
+</div>
