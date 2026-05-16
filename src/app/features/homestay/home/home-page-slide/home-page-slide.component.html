@@ -1,29 +1,62 @@
 <div class="main-container">
-  
+
   <div class="window-viewport mat-elevation-z8"
-       (touchstart)="handleTouchStart($event)" 
+       (touchstart)="handleTouchStart($event)"
        (touchend)="handleTouchEnd($event)">
-       
+
     <div class="ribbon-track" [style.transform]="transformStyle">
+
       <div class="individual-slide" *ngFor="let slide of slides">
-        <img [src]="slide.img" class="slide-img">
+
+        <div class="image-wrapper">
+
+          <!-- Skeleton Loader -->
+          <div class="skeleton" *ngIf="!slide.loaded"></div>
+
+          <!-- Image -->
+          <img
+            [src]="slide.img"
+            class="slide-img"
+            loading="lazy"
+            [class.loaded]="slide.loaded"
+            (load)="slide.loaded = true"
+            alt="slider-image"
+          >
+
+        </div>
+
       </div>
+
     </div>
 
-    <button mat-icon-button (click)="prev()" class="nav-btn prev">
+    <!-- Previous Button -->
+    <button mat-icon-button
+            (click)="prev()"
+            class="nav-btn prev">
+
       <mat-icon>chevron_left</mat-icon>
+
     </button>
-    
-    <button mat-icon-button (click)="next()" class="nav-btn next">
+
+    <!-- Next Button -->
+    <button mat-icon-button
+            (click)="next()"
+            class="nav-btn next">
+
       <mat-icon>chevron_right</mat-icon>
+
     </button>
+
   </div>
 
+  <!-- Indicators -->
   <div class="indicator-bar">
-    <span *ngFor="let s of slides; let i = index" 
+
+    <span *ngFor="let s of slides; let i = index"
           [class.active-dot]="i === currentIndex"
           (click)="setSlide(i)">
     </span>
+
   </div>
 
 </div>

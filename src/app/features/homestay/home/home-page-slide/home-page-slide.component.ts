@@ -16,12 +16,24 @@ import { MatIconModule } from '@angular/material/icon';
   
 })
 export class HomePageSlideComponent {
-  slides = [
-    { img: 'assets/images/IMG6.jpg' },
-    { img: 'assets/images/IMG7.jpg' },
-    { img: 'assets/images/IMG8.jpg' },
-    { img: 'assets/images/IMG6.jpg' }
-  ];
+slides = [
+  {
+    img: 'assets/images/IMG6.webp',
+    loaded: false
+  },
+  {
+    img: 'assets/images/IMG7.webp',
+    loaded: false
+  },
+  {
+    img: 'assets/images/IMG8.webp',
+    loaded: false
+  },
+  {
+    img: 'assets/images/IMG6.webp',
+    loaded: false
+  }
+];
 
   currentIndex = 0;
   private startX = 0;
