@@ -47,7 +47,6 @@ export class BookingFormComponent implements OnInit {
       mobile: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
       checkIn: ['', Validators.required],
       checkOut: ['', Validators.required],
-      nights: [1, [Validators.required, Validators.min(1)]],
       adults: [1, [Validators.required, Validators.min(1)]],
       children: [0],
       rooms: [1, [Validators.required, Validators.min(1)]],
@@ -58,6 +57,7 @@ export class BookingFormComponent implements OnInit {
 
 
   submitForm() {
+    console.log('Form Value:', this.bookingForm);
     if (this.bookingForm.valid) {
 
       const formData = this.bookingForm.value;
@@ -67,7 +67,6 @@ export class BookingFormComponent implements OnInit {
         mobile: formData.mobile,
         checkin: this.datePipe.transform(formData.checkIn, 'dd-MMM-yyyy'),
         checkout: this.datePipe.transform(formData.checkOut, 'dd-MMM-yyyy'),
-        nights: formData.nights,
         members: (formData.adults || 0) + (formData.children || 0),
         rooms: formData.rooms,
         adults: formData.adults,
@@ -76,6 +75,7 @@ export class BookingFormComponent implements OnInit {
         message: formData.message
       };
       console.log('Template Params:', templateParams); 
+      
 
       this.emailService.send(templateParams)
         .then(() => {
